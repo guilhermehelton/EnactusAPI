@@ -1,7 +1,7 @@
 const GoogleSpreadsheet = require("google-spreadsheet");
 const credentials = require("./credentials.json");
 
-export default class PlanilhaRepository {
+class PlanilhaRepository {
   static getDiasMes(month) {
     month--;
 
@@ -48,3 +48,5 @@ export default class PlanilhaRepository {
     }
   }
 }
+
+module.exports = PlanilhaRepository;
