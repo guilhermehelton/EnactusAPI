@@ -9,10 +9,11 @@ app.get("/init", (req, res) => {
   });
 });
 
-app.post("/create-sheet", (req, res) => {
+app.post("/create-sheet", async (req, res) => {
   try {
     const sheet = new PlanilhaRepository();
-    sheet.desenhar(req.body);
+    await sheet.desenhar(req.body);
+    console.log("Planilha criada");
   } catch (error) {
     console.log("Não foi possível criar. ERROR: ", error);
   }
