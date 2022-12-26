@@ -14,6 +14,7 @@ app.post("/create-sheet", async (req, res) => {
     const sheet = new PlanilhaRepository();
     await sheet.desenhar(req.body);
     console.log("Planilha criada");
+    res.send(200);
   } catch (error) {
     console.log("Não foi possível criar. ERROR: ", error);
   }
