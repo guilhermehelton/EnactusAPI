@@ -14,7 +14,7 @@ app.post("/create-sheet", (req, res) => {
     const sheet = new PlanilhaRepository();
     sheet.desenhar(req.body);
   } catch (error) {
-    console.log("Não foi possível criar");
+    console.log("Não foi possível criar. ERROR: ", error);
   }
 });
 
